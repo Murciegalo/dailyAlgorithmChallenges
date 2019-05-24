@@ -59,4 +59,78 @@ console.log(jsonRufus(data, 'level3'));
 //
 
 // 3. Write a JavaScript program to converts a specified number to an array of digits.
+const numToArr = str => [...`${str}`].map( n => parseInt(n));
+
+console.log(numToArr(1234));
+
+//
+//------------------------
+//
+
+// 4. Write a JavaScript program to filter out the specified values from an specified array. Return the original array without the filtered values.
+const arrFilter = (arr , ...args) => arr.filter( values => args.every(ael => ael !== values));
+
+const arrFilterII = (arr, ...args) => arr.filter(values => !args.includes(values));
+
+const test = ['a', 'b', 'c', 'd', 'e'];
+
+console.log(arrFilter(test, 'a'));
+console.log(arrFilterII(test, 'a'));
+
+
+// ---------------------------
+
+
+// 5. Write a JavaScript program to combine the numbers of a given array into an array containing all combinations. 
+const combinator = args => args.reduce((acc, el) => [...acc , ...acc.map( v => [...v , el])], [[]] )
+
+console.log(combinator(test));
+
+
+// --------------------------
+
+
+// 6. Write a JavaScript program to extract out the values at the specified indexes from an specified array.
+const idxSearch = (arr, args) => args.map(el => arr[el]);
+
+console.log(idxSearch(test, [0,3]));
+
+
+//-----------------------------------
+
+
+// 7. Write a JavaScript program to remove specified elements from the left of a given array of elements.
+const left = (arr , n=1) => {
+  return arr.slice(n);
+}
+console.log(left(test, 2));
+
+
+//------------------------------------
+
+
+// 8. Write a JavaScript program to remove specified elements from the right of a given array of elements. 
+const right = (arr , n = 0) => {
+  return arr.slice(-n)
+}
+
+console.log(right(test, 2));
+
+
+//-------------------------------------
+
+
+// 9. Write a JavaScript program to filter out the non-unique values in an array.
+const filterUnique = arr => arr.filter(i => { 
+  return arr.indexOf(i) === arr.lastIndexOf(i)
+});
+
+console.log(filter(['a', 'a', 'b', 'b', 'c']));
+
+
+//---------------------------------------
+
+
+
+
 
