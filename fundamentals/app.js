@@ -125,12 +125,45 @@ const filterUnique = arr => arr.filter(i => {
   return arr.indexOf(i) === arr.lastIndexOf(i)
 });
 
-console.log(filter(['a', 'a', 'b', 'b', 'c']));
+console.log(filterUnique(['a', 'a', 'b', 'b', 'c']));
 
 
 //---------------------------------------
+//10. Decapitalize the first letter of a string
+const decapitalize = str => str.charAt(0).toLowerCase() + str.slice(-str.length + 1);
+
+console.log(decapitalize('Arabe'));
+console.log(decapitalize('W3resource'));
+
+//-----------------------------------------
+// 11. Mix 2 arrs into a New ONE
+const arrMixer = (arr1, arr2) => {
+  return arr1.reduce((acc, curr) => acc.concat(arr2.map(y => [curr, y])),[]);
+}
+
+console.log(arrMixer([1,2,3],[7,6,5]));
 
 
+//----------------------------------------
+// 12. Filter out the element(s) of an given array, that have one of the specified values.
+const givenFilter = (arr, ...args) => arr.filter( values => !args.includes(values))
+
+console.log(givenFilter([1, 2, 3, 5], 5,3));
 
 
+//---------------------------------------
+// 13. A program to get the sum of an given array, after mapping each element to a value using the provided function.
+const sumBy = (arr, fn) =>
+  arr.map(typeof fn === 'function' ? fn : val => val[fn]).reduce((acc, val) => acc + val, 0);
 
+console.log(sumBy([{ n: -4 }, { n: -2 }, { n: 8 }, { n: 6 }], 'n'));
+
+
+//----------------------------------------
+// 14. To get a random number in the specified range
+const randomGetter = (min, max) => Math.ceil(Math.random() * (max - min) + min);
+
+console.log(randomGetter(4, 9));
+
+
+//--------------------------------------
