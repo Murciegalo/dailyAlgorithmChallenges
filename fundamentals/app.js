@@ -167,3 +167,42 @@ console.log(randomGetter(4, 9));
 
 
 //--------------------------------------
+// 15. Cast the provided value as an array if it's not one
+const cast = val => Array.isArray(val) ? val : [val] ;
+
+console.log(cast(['ey']));
+console.log(cast('ey'));
+
+
+//-------------------------------------
+// 16. To count the occurrences of a value in an array
+const occurrencesCounter = (arr, val) => arr.reduce((a , c) => (
+  c === val ? a+1 : a) , 0
+)
+console.log(occurrencesCounter([1,1,1,1,5,7,8,9], 9));
+
+
+//------------------------------------
+// 17. To detect whether the website is being opened in a mobile device or a desktop/laptop
+const deviceDetect = () => {
+  // /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.platform) ? "Mobile" : "Desktop" ;
+}
+
+console.log(deviceDetect());
+
+
+//--------------------------------------
+// 18.  Iterate over all own properties of an object, running a callback for each on
+const objCallback = (obj , f) => Object.keys(obj).forEach(key => f(obj[key]));
+
+objCallback({foo: 1 , foo2: 2}, v => console.log(v))
+
+
+//-----------------------------------------
+// 19. Take ALL kind of Objects and return the longest one
+const objMedidor = (...vals) => [...vals].sort((a , b) => b.length - a.length)[0];
+console.log(objMedidor([1, 2, 3], [1, 2], [1, 2, 3, 4, 5]));
+
+
+//------------------------------------------
+// 20. 
