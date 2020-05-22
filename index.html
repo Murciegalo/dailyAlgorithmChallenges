@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+  </head>
+  <body>
+    <marquee behavior="alternate" direction="right"><h1>Project Euler</h1></marquee>
+    <hr>
+    <label for="firstNumber">1st Number</label>
+    <input type="number" name="firstNumber" class="firstNumber">
+    <label for="secondNumber">2nd Number</label>
+    <input type="number" name="secondNumber" class="secondNumber">
+    <button class="multiply" onclick="multiply()">
+      Multiply
+    </button>
+    <button class="divide">
+      Divide
+    </button>
+    <div class="result">
+      The result is: <span class="show"></span>
+    </div>
+
+    <script>
+
+      const multiply = () => {
+        console.log('I run')
+        const label1 = document.querySelector(".firstNumber").value;
+        const label2 = document.querySelector(".secondNumber").value;
+        document.querySelector('.show').innerHTML = label1 * label2
+        // Update
+              
+      }
+      
+      const dividy = () => {
+
+      }
+    </script>
+
+
+
+
+    <script src="./app.js"></script>
+  </body>
+</html>
