@@ -457,8 +457,11 @@ console.log(arrNum(123));
 
 // ===============================================
 // filter out the specified values from a specified array.
+const pullOut = ( arr , ...args ) => arr.filter(
+  el => args.every( x => x != el )
+)
 
-
+console.log(pullOut(['a' , 'b' , 'c' , 'd' , 'e'], 'a' , 'c'));
 
 
 
