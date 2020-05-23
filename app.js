@@ -466,17 +466,27 @@ console.log(pullOut(['a' , 'b' , 'c' , 'd' , 'e'], 'a' , 'c'));
 
 
 // ===============================================
+// to extract out the values at specified indexes from an array.
+const extractArr = ( arr , ...args ) => {
+  return arr.filter( (curr , I) => args.every( i => i !== arr[I] )) 
+}
 
-
-
-
+console.log(extractArr([ 1 , 2, 3, 4, 5 ] , 3 , 1  , 8));
 
 
 // ===============================================
+// Replace the names of multiple object keys with the values provided
+const obj = { name: 'Bobo', job: 'Programmer', shoeSize: 100 };
 
+const objReplace = ( keys , obj ) => {
+  let result = {}
+  for ( let key in obj ){           // Bobo
+    result[ keys[ key ] || key ] = obj[ key ]
+  }
+  return result;
+}
 
-
-
+console.log(objReplace({ name: 'firstName', job: 'Actor' }, obj ))
 
 
 // ===============================================
