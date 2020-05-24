@@ -490,16 +490,17 @@ console.log(objReplace({ name: 'firstName', job: 'Actor' }, obj ))
 
 
 // ===============================================
+// function that returns true if provided function returns true for all elements in a collection
+const truCheck = ( arr , fn = Boolean ) =>  arr.every(fn)
 
-
-
-
-
+console.log(truCheck([ 1 , 2, 3, 4 ] , x => x > 0 ));
 
 
 // ===============================================
+// program to remove specified elements from the left of an array 
+const leftR = ( arr , I ) => arr.slice(I)
 
-
+console.log(leftR([ 1, 2, 3, 4 ] , 2));
 
 
 
