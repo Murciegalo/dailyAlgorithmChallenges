@@ -503,54 +503,55 @@ const leftR = ( arr , I ) => arr.slice(I)
 console.log(leftR([ 1, 2, 3, 4 ] , 2));
 
 
+// ===============================================
+// program to filter out the non-unique values in an array
+const filterUnique = arr => arr.filter( el  => arr.indexOf(el) ===  arr.lastIndexOf(el));
+
+console.log(filterUnique([ 0 , 1 , 2, 3, 2, 4 ]));
+
+// ===============================================
+// program to filter out values against a provided comparator
+const comparator = ( arr , c ) => arr.filter( el => el != c );
+
+
+console.log(comparator([ 0 , 1 , 2, 3, 2, 4 ] , 3));
+
+
+// ===============================================
+// program to remove key-value pairs corresponding to the keys from an obj
+const omit = ( obj , arr ) => arr.reduce(
+  (acc, key) => (acc[key] ? delete obj[key] : obj, acc)
+,
+obj)
+
+console.log(omit({ a: 1, b: '2', c: 3 }, ['b', 'c']));// {a: 1}
+
+
+// ===============================================
+// program to create an array of key-value pair arrays from a given object.
+const arrCreator = obj => Object.keys(obj).map( el => [ el , obj[el] ]);
+
+console.log(arrCreator({ a: 12 , b: 14 , c: 15}));
 
 
 
 // ===============================================
+// Program to create an obj from an array
+
+const objCreator = arr => arr.reduce(( a, v ) => ( ( a[v[0]] = v[1]) , a), {}) 
+const objCreator2 = arr => Object.fromEntries(arr)
 
 
+console.log(objCreator([ [ 'a' ,12 ] , [ 'b' , 14 ] , [ 'c' , 15 ] ]));
 
-
-
-
-
-// ===============================================
-
-
-
-
-
+// console.log(objCreator2([ [ 'a' ,12 ] , [ 'b' , 14 ] , [ 'c' , 15 ] ]));
 
 
 // ===============================================
+// program to remove falsey values from a given array.
+const falsy = arr => arr.filter(Boolean)
 
-
-
-
-
-
-
-// ===============================================
-
-
-
-
-
-
-
-// ===============================================
-
-
-
-
-
-
-
-// ===============================================
-
-
-
-
+console.log(falsy([ null , undefined , 0 , 1 ]));
 
 
 
