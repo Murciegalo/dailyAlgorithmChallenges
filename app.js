@@ -556,20 +556,22 @@ console.log(falsy([ null , undefined , 0 , 1 ]));
 
 
 // ===============================================
+// program to Init a two dimension array of given width , height , value
+const arrD = ( w , h , value ) => Array.from({ length: h }).map(
+  () => Array.from({ length: w }).fill(value)
+)
 
-
-
-
-
+console.log(arrD( 3 , 3 , 5));
 
 
 // ===============================================
+// program to Init arrs with a given range
+const arrRange = ( end , start = 0 ) => Array.from({ 
+  length: Math.round(end + 1 - start)}).map( ( v, i ) => i + start )
 
 
-
-
-
-
+console.log(arrRange(7));
+console.log(arrRange( 9 , 3));
 
 // ===============================================
 
