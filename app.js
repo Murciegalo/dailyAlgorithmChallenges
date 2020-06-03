@@ -574,17 +574,23 @@ console.log(arrRange(7));
 console.log(arrRange( 9 , 3));
 
 // ===============================================
-
-
-
-
-
+// Count the ocurrences of a val within an arr
+const countOccur = (arr, val) => arr.reduce(
+  (a, cv) => (cv === val ? a + 1 : a), 0
+);
+console.log(countOccur([ 1 , 1 , 1 , 3 , 5, 6 ] , 1));
 
 
 // ===============================================
+// Create a deep clone of an Object
+const deepClone = obj => Object.defineProperties(
+  obj, Object.getOwnPropertyDescriptors(obj)
+);
 
+const a = { foo: 'bar', obj: { a: 1, b: 2 } }
+const b = deepClone(a)
 
-
+console.log(b) 
 
 
 
