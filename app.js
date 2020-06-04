@@ -593,26 +593,26 @@ const b = deepClone(a)
 console.log(b) 
 
 
+// ===============================================
+// Detect website being opened in a mobile device , desktop/laptop 
+const detectDeviceType = () =>
+  /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    ? 'Mobile'
+    : 'Desktop';
+console.log(detectDeviceType());
 
 
 // ===============================================
+// Program to filter all values that don't return true.
+const falsyFinder = (arr , comp ) => {
+  return arr.filter(v => v != comp )
+}
 
-
-
-
-
-
-
-// ===============================================
-
-
-
-
-
+console.log(falsyFinder([ 0 , 1, 3 ] , false));
 
 
 // ===============================================
-
+76
 
 
 
