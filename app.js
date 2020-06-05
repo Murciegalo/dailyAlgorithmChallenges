@@ -612,14 +612,17 @@ console.log(falsyFinder([ 0 , 1, 3 ] , false));
 
 
 // ===============================================
-76
+// To iterate over properties of an object, running a callback for each one
+const objModifier = ( obj , cb ) => {
+  return Object.values(obj).map( el => cb(el))
+}
 
-
-
+console.log(objModifier({ a: 2 , b:3 } , x => x + 2));
 
 
 
 // ===============================================
+// Luhn Algorithm
 
 
 
