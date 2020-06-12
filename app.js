@@ -622,11 +622,16 @@ console.log(objModifier({ a: 2 , b:3 } , x => x + 2));
 
 
 // ===============================================
-// Luhn Algorithm
+// program to convert a given string into an array of words.
+const strConverter = str => str.split(' ')
 
+console.log(strConverter('Vamos a comprar chocolate'));
 
+// ===============================================
+// Round a number to a specific number of digits
+const round = (n, decimals = 0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
 
-
+console.log(round(1.005, 2));
 
 
 
